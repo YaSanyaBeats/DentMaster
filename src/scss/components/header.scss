@@ -1,29 +1,14 @@
 .header {
-    transition: .3s;
+    transition: .3s !important;
     background-color: transparent;
     z-index: 1000;
-    width: 100%;
+    width: 100% !important;
     padding: 20px 0;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     max-height: 80px;
-    &.uk-active{
-        background-color: white;
-        .header {
-            &__block * {
-                color: #535353;
-                fill: #535353
-            }
-            &__burger-line {
-                background-color: #535353;
-            }
-            &__contact-text {
-                opacity: 1;
-            }
-        }
-    }
     &__container {
         display: flex;
         align-items: center;
@@ -34,7 +19,7 @@
     &__block {
         display: flex;
         align-items: center;
-        gap: 22px;
+        gap: 12px;
     }
 
     &__logo-wrapper {
@@ -56,7 +41,7 @@
     }
 
     &__contacts {
-        padding-left: 10px;
+        padding-left: 20px;
     }
 
     &__contact-link {
@@ -137,20 +122,177 @@
     }
 }
 
+.scroll {
+    .header {
+        background-color: white;
+        .header {
+            &__block * {
+                color: #535353;
+                fill: #535353
+            }
+            &__burger-line {
+                background-color: #535353;
+            }
+            &__contact-text {
+                opacity: 1;
+            }
+        }
+    }
+}
+
 .menu {
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: 24px;
     left: 0;
     right: 0;
-    &__container {}
-    &__list {}
-    &__elem {}
-    &__link {}
+    z-index: 5;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        border: 1px solid #FFFFFF1A;
+        background-color: #FFFFFF1A;
+        backdrop-filter: blur(40px);
+        border-radius: 4px;
+        transition: .3s;
+        opacity: 0;
+        transform: translateX(-300px) scaleX(0.5);
+        overflow-x: auto;
+        pointer-events: none;
+        &_active {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: all;
+        }
+        @include any-hover {
+            .menu {
+                &__link {
+                    opacity: .4;
+                }
+            }
+        }
+
+        &::-webkit-scrollbar {
+            height: 6px
+        }
+        
+        &::-webkit-scrollbar-track {
+            background: 0 0
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background-color: #FFFFFF88;
+            border-radius: 25px;
+        }
+        
+    }
+    &__elem {
+        flex-grow: 1;
+        white-space: nowrap;
+        &:first-child {
+            .menu {
+                &__link {
+                    padding-left: 32px;
+                }
+            }
+        }
+        &:last-child {
+            .menu {
+                &__link {
+                    padding-right: 32px;
+                }
+            }
+        }
+    }
+    &__link {
+        text-transform: uppercase;
+        font-weight: 500;
+        color: white;
+        display: block;
+        text-align: center;
+        padding: 12px 12px;
+        transition: .3s;
+        @include any-hover {
+            text-decoration: none;
+            opacity: 1 !important;
+        }
+    }
+    &__button {
+        width: 216px;
+        background-color: #FFFFFF1A;
+        border: 1px solid #FFFFFF1A;
+        backdrop-filter: blur(40px);
+        border-radius: 4px;
+        color: white;
+        position: relative;
+        z-index: 2;
+        &_active {
+            .button {
+                &__icon {
+                    transform: rotate(30deg) translateY(2px);
+                }
+            }
+        }
+        @include any-hover {
+            background-color: #FFFFFF33;
+            border: 1px solid #FFFFFF33;
+            color: white;
+        }
+        &:focus {
+            background-color: #FFFFFF33;
+            border: 1px solid #FFFFFF33;
+            color: white;
+        }
+        .button {
+            &__icon {
+                padding: 1px;
+            }
+        }
+    }
+}
+
+.scroll {
+    .menu {
+        &__button {
+            background-color: #EDEDED;
+            border-color: #EDEDED;
+            color: #535353;
+            @include any-hover {
+                background-color: #DCDCDC;
+                border-color: #DCDCDC;
+                color: #262626;
+            }
+            &:focus {
+                background-color: #DCDCDC;
+                border-color: #DCDCDC;
+                color: #535353;
+            }
+        }
+        &__list {
+            background-color: #EDEDED;
+            border-color: #EDEDED;
+            .menu {
+                &__link {
+                    color: #535353;
+                }
+            }
+        }
+    }
 }
 
 
 @include media($mobile) {
     .header {
+        max-height: 72px;
+        padding: 16px 0;
         &__mobile{
             display: flex;
         }
@@ -159,6 +301,12 @@
         }
         &__logo-wrapper {
             width: 166px;
+        }
+        &__block {
+            gap: 8px;
+        }
+        &__search {
+            display: none;
         }
     }
 }

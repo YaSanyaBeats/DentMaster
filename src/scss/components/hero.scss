@@ -1,6 +1,5 @@
 .hero {
     position: relative;
-    margin-top: -80px;
     height: 100vh;
     overflow: hidden;
     &__container {
@@ -11,6 +10,7 @@
         justify-content: space-between;
         height: 100%;
         padding-bottom: 116px;
+        gap: 32px;
     }
     &__top {
         padding-top: 120px;
@@ -23,6 +23,7 @@
     &__bottom {}
     &__tag {
         color: white;
+        font-size: 14px;
     }
     &__content {
         display: flex;
@@ -37,14 +38,14 @@
         margin: 0;
     }
     &__img {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         width: 100%;
         height: 100%;
-        object-position: 0 0;
+        object-position: 60% 0;
         object-fit: cover;
     }
     &__overlay-top {
@@ -69,8 +70,37 @@
     &__button {
         margin-bottom: 8px;
         width: 216px;
+        flex: 0 0 216px;
     }
 }
+
+@include media($mobile) {
+    .hero {
+        &__container {
+            padding-bottom: 64px;
+        }
+        &__top {
+            padding-top: 104px;
+        }
+        &__overlay-top {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+        }
+        &__content {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+        }
+        &__button {
+            width: 100%;
+            flex: 1 1 auto;
+            margin-bottom: 0;
+        }
+    }
+    .menu {
+        display: none;
+    }
+}
+
 
 .empty {
     height: 2000px;

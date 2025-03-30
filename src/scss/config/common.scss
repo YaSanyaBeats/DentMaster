@@ -37,19 +37,9 @@ h1, h2, h3, h4, h5, h6 {
     @include any-hover {
         background-color: #262626;
         text-decoration: none;
-        .button {
-            &__icon {
-                transform: rotate(45deg);
-            }
-        }
     }
     &:focus {
         background-color: #262626;
-        .button {
-            &__icon {
-                transform: rotate(45deg);
-            }
-        }
     }
     &:focus-visible {
         outline: none !important;
@@ -317,10 +307,26 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &__icon {
-        transition: .3s;
+        transition: transform .3s;
     }
     &__text {
         padding-top: 2px;
+    }
+    &_anim {
+        @include any-hover {
+            .button {
+                &__icon {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+        &:focus {
+            .button {
+                &__icon {
+                    transform: rotate(45deg);
+                }
+            }
+        }
     }
 }
 
@@ -619,4 +625,9 @@ h1, h2, h3, h4, h5, h6 {
         content: ']';
         color: currentColor;
     }
+}
+
+section {
+    background-color: white;
+    position: relative;
 }
