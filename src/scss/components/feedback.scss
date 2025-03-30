@@ -74,7 +74,7 @@
     &__form {
         max-width: 564px;
         width: 100%;
-        margin-right: 116px;
+        margin-right: 100px;
         display: flex;
         flex-direction: column;
     }
@@ -85,6 +85,7 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.6);
         color: white;
         padding-bottom: 14px;
+        outline: none;
         &::placeholder{
             color: rgba(255, 255, 255, 0.6);
         }
@@ -94,13 +95,13 @@
     }
     &__form-button{
         margin-top: 24px;
+        text-align: left;
     }
     &__privacy-text{
         margin-top: 16px;
         color: rgba(255, 255, 255, 0.8);
         display: inline;
         align-items: center;
-        min-width: max-content;
     }
     &__privacy-link{
         text-transform: none;
@@ -123,4 +124,158 @@
         width: 100%;
     }
 }
+@include media($tablet) {
+    .feedback {
 
+        &__container {
+
+        }
+        
+        &__description {
+
+        }
+    
+        &__description-title {
+
+        }
+    
+        &__description-text {
+
+        }
+    
+        &__content {
+
+        }
+    
+        &__contacts {
+  
+        }
+    
+        &__contact {
+
+        }
+    
+        &__contact-title {
+
+        }
+    
+        &__contact-list {
+
+        }
+    
+        &__contact-item {
+
+        }
+    
+        &__link-button {
+     
+        }
+        &__contact-button{
+      
+        }
+        &__form {
+
+        }
+    
+        &__input {
+
+        }
+        &__form-button{
+    
+        }
+        &__privacy-text{
+
+        }
+        &__privacy-link{
+
+        }
+        &__back-wrapper {
+            bottom: 0;
+            top: auto;
+        }
+        &__back {
+     
+        }
+    }
+}
+@include media($mobile) {
+    .feedback {
+        padding: 64px 0;
+        &__container {
+
+        }
+        
+        &__description {
+            margin-top: 32px;
+        }
+    
+        &__description-title {
+
+        }
+    
+        &__description-text {
+
+        }
+    
+        &__content {
+            padding: 0;
+            border: none;
+            margin-top: 32px;
+            flex-direction: column-reverse;
+            gap: 0;
+        }
+    
+        &__contacts {
+        }
+    
+        &__contact {
+            display: none;
+        }
+    
+        &__contact-title {
+
+        }
+    
+        &__contact-list {
+
+        }
+    
+        &__contact-item {
+
+        }
+    
+        &__link-button {
+            display: none;
+        }
+        &__contact-button{
+            width: 100%;
+            text-align: center;
+            margin: 0        
+        }
+        &__form {
+            margin-right: 0;
+            margin-bottom: 20px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+        }
+    
+        &__input {
+
+        }
+        &__form-button{
+    
+        }
+        &__privacy-text{
+
+        }
+        &__privacy-link{
+
+        }
+        &__back-wrapper {
+            bottom: 130px;
+        }
+        &__back {
+            transform: scale(3.5) rotate(25deg);
+        }
+    }
+}
