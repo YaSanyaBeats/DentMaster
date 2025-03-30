@@ -1,0 +1,40 @@
+.residency-diplom {
+    padding-top: 64px;
+    &__container {
+        padding-left: 248px;
+    }
+    &__top {
+        margin-top: 64px;
+    }
+    &__text {
+        max-width: 800px;
+        font-weight: 500;
+        color: #535353;
+        display: block;
+    }
+    &__buttons {
+        display: flex;
+        margin-top: 32px;
+        gap: 16px;
+    }
+    &__button {
+        width: 216px;
+    }
+    &__bottom {
+        display: flex;
+        margin-top: 80px;
+    }
+    &__column {
+        border-left: 1px solid #EDEDED;
+        padding: 0 16px;
+        display: flex;
+        flex-direction: column;
+    }
+    &__column-title {
+        font-weight: 700;
+    }
+    &__column-subtitle {}
+    &__column-text {
+        margin-top: 564px;
+    }
+}

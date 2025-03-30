@@ -234,6 +234,7 @@
         color: white;
         position: relative;
         z-index: 2;
+        text-align: left;
         &_active {
             .button {
                 &__icon {
