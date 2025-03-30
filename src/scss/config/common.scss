@@ -673,6 +673,13 @@ section {
 }
 
 @include media($mobile) {
+    .title-row {
+        flex-direction: column-reverse;
+        &__title {
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+    }
     .wrapper-space{
         padding-left: 0;
         padding-right: 0px;

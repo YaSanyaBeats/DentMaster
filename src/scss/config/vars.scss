@@ -1,3 +1,11 @@
 $laptop: 1408;
+$tablet-large: 1280;
 $tablet: 1100;
 $mobile: 768;
+
+$filter-azure: hue-rotate(286deg) brightness(1.2);
+$filter-blue: hue-rotate(320deg) brightness(1);
+$filter-red: hue-rotate(100deg) brightness(1.1);
+$filter-orange: hue-rotate(120deg) brightness(1.30);
+$filter-green: hue-rotate(210deg) brightness(1);
+$filter-cyan: hue-rotate(300deg) brightness(1);

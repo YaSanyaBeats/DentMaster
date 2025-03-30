@@ -1,0 +1,238 @@
+.programs {
+
+    padding-top: 96px;
+    &__container {
+    }
+
+    &__description {
+        margin-top: 64px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    &__description-title {
+        font-weight: 600;
+    }
+
+    &__description-right {
+    }
+
+    &__description-text {
+        max-width: 560px;
+        display: flex;
+    }
+
+    &__description-button {
+        margin-top: 32px;
+        width: fit-content;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 32px;
+        gap: 32px 16px;
+    }
+
+    &__card {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        border-top: 1px solid #ededed;
+        &:nth-child(4n+2){
+            &:before{
+                content: "";
+                display: block;
+                position: absolute;
+                left: -8px;
+                height: 100%;
+                width: 1px;
+                background-color: #ededed;
+                top: 0;
+            }
+        }
+        @include any-hover {
+            .programs__card-icon-wrapper{
+                opacity: 1;
+                &.azure{
+                    filter: $filter-azure;
+                }
+                &.blue{
+                    filter: $filter-blue;
+                }
+                &.red{
+                    filter: $filter-red;
+                }
+                &.orange{
+                    filter: $filter-orange;
+                }
+                &.green{
+                    filter: $filter-green;
+                }
+                &.cyan{
+                    filter: $filter-cyan;
+                }
+            }
+            .programs__card-video{
+                filter: brightness(1);
+            }
+            .programs__card-head-wrapper{
+                //background-color: #ededed;
+            }
+            .programs__card-icon{
+                //background-color: #ededed;
+            }
+            .programs__card-time{
+                background-color: #ededed;
+            }
+        }
+        
+    }
+
+    &__card-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    &__card-title {
+        text-transform: uppercase;
+        width: 52%;
+    }
+
+    &__card-icon-wrapper {
+        width: 100px;
+        height: 100px;
+        min-width: 100px;
+        min-height: 100px;
+        position: relative;
+        //transition: .5s;
+        opacity: 0.2;
+    }
+
+    &__card-icon {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        mix-blend-mode: lighten;
+        background-color: white;
+        transition: .3s;
+    }
+
+    &__card-video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0);
+    }
+
+    &__card-time {
+        padding: 4px 8px 0 8px;
+        height: 28px;
+        border: 1px solid #D2D2D2;
+        border-radius: 4px;
+        width: fit-content;
+        margin-top: 24px;
+        transition: .3s;
+    }
+
+    &__card-content {
+        display: flex;
+        flex-direction: column;
+        margin-top: 16px;
+        padding: 0px 16px;
+    }
+
+    &__card-content-title {
+        text-transform: uppercase;
+    }
+
+    &__card-content-text {
+        margin-top: 2px;
+        color: #ADADAD;
+    }
+    &__card-head-wrapper{
+        display: flex;
+        flex-direction: column;
+        padding: 20px 16px;
+        transition: .3s;
+    }
+    &__mobile-button{
+        display: none;
+        margin-top: 32px;
+        text-align: center;
+    }
+}
+
+@include media($tablet-large) {
+    .programs {
+
+        &__grid {
+  
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+    }
+}
+@include media($tablet) {
+    .programs {
+
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &__card-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            min-height: 80px;
+            opacity: 1;
+            &.azure{
+                filter: $filter-azure;
+            }
+            &.blue{
+                filter: $filter-blue;
+            }
+            &.red{
+                filter: $filter-red;
+            }
+            &.orange{
+                filter: $filter-orange;
+            }
+            &.green{
+                filter: $filter-green;
+            }
+            &.cyan{
+                filter: $filter-cyan;
+            }
+        }
+        &__card-video {
+
+            filter: brightness(1);
+        }
+    }
+}
+@include media($mobile) {
+    .programs {
+
+        &__grid {
+
+            grid-template-columns: repeat(1, 1fr);
+        }
+        &__card-time {
+            margin-top: 0px;
+        }
+        &__description {
+            flex-direction: column;
+            margin-top: 32px;
+        }
+        &__description-button{
+            display: none;
+        }
+        &__mobile-button{
+            display: flex;
+        }
+    }
+}
