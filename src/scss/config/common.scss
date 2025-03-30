@@ -25,6 +25,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'FiraSans', sans-serif;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     font-weight: 500;
     background-color: #535353;
     border: 1px solid transparent;
@@ -604,5 +605,18 @@ h1, h2, h3, h4, h5, h6 {
             font-size: 12px;
             line-height: 18px;
         }
+    }
+}
+
+.tag {
+    display: flex;
+    gap: 8px;
+    &::before {
+        content: '[';
+        color: currentColor;
+    }
+    &::after {
+        content: ']';
+        color: currentColor;
     }
 }
