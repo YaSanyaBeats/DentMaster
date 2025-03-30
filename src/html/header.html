@@ -1,6 +1,5 @@
 <header class="header" uk-sticky>
     <div class="container header__container">
-
         <div class="header__block">
             <a href="#" class="header__logo-wrapper"><img src="@img/icons/logo.svg" class="header__logo-img" uk-svg></a>
             <div class="header__contacts header__desc">
@@ -12,17 +11,57 @@
         </div>
 
         <div class="header__block">
-            <div class="header__search-wrapper header__desc"><img src="@img/icons/search.svg" class="header__search" uk-svg></div>
+            <button class="button button_small button_icon button_transparent button_dark header__search">
+                <img src="@img/icons/search.svg" class="button__icon" uk-svg>
+            </button>
+            <!-- <div class="header__search-wrapper header__desc"><img src="@img/icons/search.svg" class="header__search" uk-svg></div> -->
             <a href="#" class="button button_dark button_extra-small button_link button_underline header__account header__desc">
                 <span class="button__text">Личный кабинет</span>
             </a>
-            <div class="header__eye-wrapper"><img src="@img/icons/eye.svg" class="header__eye" uk-svg></div>
+            <button class="button button_small button_icon button_transparent button_dark header__eye">
+                <img src="@img/icons/eye.svg" class="button__icon" uk-svg>
+            </button>
+            <!-- <div class="header__eye-wrapper"><img src="@img/icons/eye.svg" class="header__eye" uk-svg></div> -->
             <div id="burger-button" class="header__burger header__mobile active">
                 <div class="header__burger-line"></div>
                 <div class="header__burger-line"></div>
                 <div class="header__burger-line"></div>
             </div>
         </div>
-
     </div>
 </header>
+
+<!-- <nav class="menu" uk-sticky="position: bottom">
+    <div class="menu__container container">
+        <button class="button button_medium button_secondary">
+            <span class="button__text">Меню</span>
+            <img src="@img/icons/menu-arrow.svg" class="button__icon" uk-svg>
+        </button>
+        <ul class="menu__list">
+            <li class="menu__elem">
+                <a href="#" class="menu__link">образование</a>
+            </li>
+            <li class="menu__elem">
+                <a href="#" class="menu__link">эргономика</a>
+            </li>
+            <li class="menu__elem">
+                <a href="#" class="menu__link">Об институте</a>
+            </li>
+            <li class="menu__elem">
+                <a href="#" class="menu__link">Преподаватели</a>
+            </li>
+            <li class="menu__elem">
+                <a href="#" class="menu__link">Наука</a>
+            </li>
+            <li class="menu__elem">
+                <a href="#" class="menu__link">Базы практической подготовки</a>
+            </li>
+            <li class="menu__elem">
+                <a href="#" class="menu__link">кроме учебы</a>
+            </li>
+            <li class="menu__elem">
+                <a href="#" class="menu__link">Контакты</a>
+            </li>
+        </ul>
+    </div>
+</nav> -->
