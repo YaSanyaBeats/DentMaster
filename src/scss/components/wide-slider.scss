@@ -1,0 +1,193 @@
+.wide-slider {
+    padding-top: 64px;
+    position: relative;
+    &__container {
+        position: relative;
+    }
+    &__content {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        position: relative;
+        z-index: 2;
+        gap: 20px;
+    }
+    &__left {
+        flex: 0 0 360px;
+        margin: 0;
+        border-radius: 4px;
+        border: 1px solid #FFFFFF1A;
+        background-color: #FFFFFF1A;
+        backdrop-filter: blur(40px);
+        min-height: 440px;
+    }
+    &__slide {
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+    }
+    &__slide-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #FFFFFF1A;
+    }
+    &__slide-top-left {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    &__slide-date {
+        color: white;
+        text-transform: uppercase;
+    }
+    &__slide-label {
+        color: #FFFFFF99;
+        text-transform: uppercase;
+    }
+    &__slide-tag {
+        color: #FFFFFFCC;
+        text-transform: uppercase;
+    }
+    &__slide-body {
+        padding-top: 20px;
+    }
+    &__slide-title {
+        color: #FFFFFF;
+        font-weight: 600;
+    }
+    &__slide-text {
+        color: #FFFFFF;
+        margin-top: 16px;
+    }
+    &__slide-link {
+        color: #FFFFFFCC;
+        text-transform: uppercase;
+        margin-top: 24px;
+        display: block;
+        width: fit-content;
+        flex: 0 0 fit-content;
+    }
+    &__nav {
+        display: flex;
+        margin: 24px;
+    }
+    &__buttons-sep {
+        width: 1px;
+        background-color: #EDEDED;
+    }
+    &__button {
+        &_prev {}
+        &_next {}
+    }
+    &__right {
+        flex: 0 0 360px;
+
+    }
+    &__speaker-card {
+        backdrop-filter: blur(40px);
+        background-color: #FFFFFF1A;
+        display: flex;
+        flex-direction: column;
+        padding: 12px;
+        border-radius: 4px;
+        border: 1px solid #FFFFFF1A;
+    }
+    &__speaker-card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #FFFFFF1A;
+    }
+    &__speaker-card-left-text {
+        text-transform: uppercase;
+        color: #FFFFFF99;
+    }
+    &__speaker-card-right-text {
+        text-transform: uppercase;
+        color: #FFFFFFCC;
+    }
+    &__speaker-card-body {
+        margin-top: 12px;
+        display: flex;
+        gap: 12px;
+    }
+    &__speaker-card-img {
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+    &__speaker-card-content {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    &__speaker-card-title {
+        color: #FFFFFFCC;
+    }
+    &__speaker-card-text {
+        color: #FFFFFF99;
+    }
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@include media($tablet) {
+    .wide-slider {
+        &__left {
+            flex-basis: 300px;
+        }
+    }
+}
+
+@include media($mobile) {
+    .wide-slider {
+        min-height: 680px;
+        display: flex;
+        &__container {
+            height: auto;
+        }
+        &__content {
+            flex-direction: column-reverse;
+            align-items: stretch;
+            padding: 16px 0;
+            height: 100%;
+        }
+        &__left {
+            width: 100%;
+            min-height: auto;
+        }
+        &__right {
+            flex: 1 1 auto;
+        }
+        &__slide {
+            padding: 16px;
+        }
+        &__nav {
+            display: none;
+        }
+        &__slide-tag {
+            display: none;
+        }
+        &__slide-top-left {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+        &__slide-title {
+            margin-bottom: 16px;
+        }
+    }
+}

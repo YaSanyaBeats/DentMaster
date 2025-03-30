@@ -128,24 +128,37 @@ function initLaptopPortal() {
 function initSliders() {
     window.equipmentRight = new Swiper('.equipment__right', {
         loop: true,
+        allowTouchMove: false,
     });
     
+    let equipmentElems = $('.equipment__pagination-elem');
+
     window.equipmentLeft = new Swiper('.equipment__left', {
         loop: true,
-      
-        pagination: {
-            el: '.equipment__pagination',
-        },
         navigation: {
             prevEl: '.equipment__button_prev',
             nextEl: '.equipment__button_next',
         },
         thumbs: {
             swiper: window.equipmentRight
-        }
+        },
+        pagination: {
+            el: '.equipment__pagination',
+            clickable: true,
+            bulletActiveClass: 'equipment__pagination-elem_active',
+            renderBullet: function (index, className) {
+                return '<li class="equipment__pagination-elem text_link-sm ' + className + '">' + $(equipmentElems[index]).text() + '</li>';
+            },
+        },
     });
 
-    
+    window.wideSlider = new Swiper('.wide-slider__left', {
+        loop: true,
+        navigation: {
+            prevEl: '.wide-slider__button_prev',
+            nextEl: '.wide-slider__button_next',
+        },
+    })
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
