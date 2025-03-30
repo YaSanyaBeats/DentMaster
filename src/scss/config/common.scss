@@ -675,5 +675,6 @@ section {
 @include media($mobile) {
     .wrapper-space{
         padding-left: 0;
+        padding-right: 0px;
     }
 }
