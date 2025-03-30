@@ -1,0 +1,30 @@
+.equipment {
+    &__container {  
+    }
+    &__content {
+        display: flex;
+        align-items: flex-start;
+        gap: 56px;
+    }
+    &__left {
+        flex-grow: 1;
+    }
+    &__swiper-wrapper {
+        align-items: flex-start;
+    }
+    &__slide {
+        height: auto;
+    }
+    &__title {}
+    &__text {}
+    &__buttons {
+        display: flex;
+        &_prev {}
+        &_next {}
+    }
+    &__pagination {}
+    &__right {
+        flex: 0 0 448px;
+    }
+    &__img {}
+}

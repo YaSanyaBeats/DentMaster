@@ -145,7 +145,7 @@
     bottom: 24px;
     left: 0;
     right: 0;
-    z-index: 5;
+    z-index: 999;
     &__container {
         display: flex;
         justify-content: space-between;
@@ -227,6 +227,7 @@
     }
     &__button {
         width: 216px;
+        flex: 0 0 216px;
         background-color: #FFFFFF1A;
         border: 1px solid #FFFFFF1A;
         backdrop-filter: blur(40px);
@@ -284,6 +285,10 @@
                 &__link {
                     color: #535353;
                 }
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #535353;
             }
         }
     }

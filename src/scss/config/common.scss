@@ -666,8 +666,14 @@ section {
     padding-right: 100px;
 }
 
+@include media($laptop) {
+    .wrapper-space{
+        padding-right: 0;
+    }
+}
+
 @include media($mobile) {
     .wrapper-space{
-        padding-left: 0px;
+        padding-left: 0;
     }
 }

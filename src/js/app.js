@@ -118,6 +118,29 @@ function initLaptopPortal() {
     })
 }
 
+function initSliders() {
+    window.equipmentRight = new Swiper('.equipment__right', {
+        loop: true,
+    });
+    
+    window.equipmentLeft = new Swiper('.equipment__left', {
+        loop: true,
+      
+        pagination: {
+            el: '.equipment__pagination',
+        },
+        navigation: {
+            prevEl: '.equipment__button_prev',
+            nextEl: '.equipment__button_next',
+        },
+        thumbs: {
+            swiper: window.equipmentRight
+        }
+    });
+
+    
+}
+
 document.addEventListener('DOMContentLoaded', (event) => {
     if(isMobile) {
         initAccordeons();
@@ -133,4 +156,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     initScrollHandler();
     initFixedMenu();
+    initSliders();
 })

@@ -14,7 +14,10 @@
         margin-top: 32px;
         gap: 16px;
     }
-    &__button {
+    &__button-first {
+        width: 216px;
+    }
+    &__button-second {
         width: 216px;
     }
     &__bottom {
@@ -38,9 +41,11 @@
     &__column-title {
         font-weight: 700;
     }
-    &__column-subtitle {}
+    &__column-subtitle {
+        text-transform: uppercase;
+    }
     &__column-text {
-        margin-top: 32px;
+        margin-top: 40px;
     }
     &__fixed {
         background-color: white;
@@ -49,5 +54,46 @@
         height: 1000px;
         display: flex;
         flex-direction: column;
+    }
+}
+
+@include media($laptop) {
+    .residency-diplom {
+        &__columns-empty {
+            display: none;
+        }
+        &__wrapper {
+            height: auto;
+        }
+        &__bottom {
+            display: none;
+        }
+    }
+}
+
+@include media($tablet) {
+    .residency-diplom {
+        &__columns {
+            flex-direction: column;
+            gap: 48px;
+        }
+    }
+}
+
+@include media($mobile) {
+    .residency-diplom {
+        &__button-first {
+            width: 100%;
+            text-align: left;
+        }
+        &__button-second {
+            display: none;
+        }
+        &__top {
+            margin-top: 32px;
+        }
+        &__columns {
+            margin-top: 40px;
+        }
     }
 }
