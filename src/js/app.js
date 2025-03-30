@@ -52,27 +52,64 @@ function hideFixedMenu() {
     button.removeClass('menu__button_active');
 }
 
-function animFeedBackOverlay()
-{
+function animFeedBackOverlay() {
     let section = document.querySelector('.feedback');
     let image = document.querySelector('.feedback__back');
-    let skewUpdateDelay = 16;
-    let lastTime = 0;
-    if (section && image)
-    {
-        section.addEventListener('mousemove', (e) => {
+    
+    if (!section || !image) return;
 
-            const now = Date.now();
-            if (now - lastTime < skewUpdateDelay) return;
+    let lastSkewTime = 0;
+    let skewUpdateDelay = 16; 
+    let lastScrollTime = 0;
+    let scrollUpdateDelay = 100; 
 
-            let rect = section.getBoundingClientRect();
-            let y = e.clientY - rect.top;
-            let yPercent = y / rect.height;
-            let yValue = 1 + yPercent;
-            image.style.transform = `scale(${yValue})`;
-        });
-    }
+   
+    const handleMouseMove = (e) => {
+        const now = Date.now();
+        if (now - lastSkewTime < skewUpdateDelay) return;
+        lastSkewTime = now;
+        
+        updateTransform(e);
+    };
+
+    
+    const handleScroll = () => {
+        const now = Date.now();
+        if (now - lastScrollTime < scrollUpdateDelay) return;
+        lastScrollTime = now;
+        
+        
+        const fakeEvent = {
+            clientX: lastMouseX,
+            clientY: lastMouseY
+        };
+        updateTransform(fakeEvent);
+    };
+
+
+    let lastMouseX = 0;
+    let lastMouseY = 0;
+    
+    section.addEventListener('mousemove', (e) => {
+        lastMouseX = e.clientX;
+        lastMouseY = e.clientY;
+        handleMouseMove(e);
+    });
+
+
+    const updateTransform = (e) => {
+        let rect = section.getBoundingClientRect();
+        let y = e.clientY - rect.top;
+        let yPercent = y / rect.height;
+        let yValue = 1 + yPercent * 0.5; 
+        
+        image.style.transform = `scale(${yValue})`;
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
 }
+
+
 document.addEventListener('DOMContentLoaded', (event) => {
     if(isMobile) {
         initAccordeons();
