@@ -1,0 +1,122 @@
+.feedback {
+    position: relative;
+    background-color: #9c9c9c;
+    overflow: hidden;
+    padding: 144px 0 100px 0;
+    &__container {
+        z-index: 1;
+        position: relative;
+        padding-left: 232px;
+    }
+
+    &__description {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 64px;
+    }
+
+    &__description-title {
+        font-weight: 600;
+    }
+
+    &__description-text {
+        max-width: 560px;
+        display: flex;
+    }
+
+    &__content {
+        padding-top: 16px;
+        margin-top: 64px;
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        display: flex;
+        gap: 50px;
+        justify-content: space-between;
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        &:nth-child(n+2){
+            margin-top: 32px;
+        }
+    }
+
+    &__contact-title {
+        color: white;
+        opacity: 0.6;
+    }
+
+    &__contact-list {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__contact-item {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    &__link-button {
+        margin-top: 16px;
+        width: fit-content;
+    }
+
+    &__form {
+        max-width: 564px;
+        width: 100%;
+        margin-right: 116px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+        color: white;
+        padding-bottom: 14px;
+        &::placeholder{
+            color: rgba(255, 255, 255, 0.6);
+        }
+        &:nth-child(n+2){
+            margin-top: 16px;
+        }
+    }
+    &__form-button{
+        margin-top: 24px;
+    }
+    &__back-wrapper {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 110px;
+        filter: blur(50px);
+        z-index: 0;
+        width: fit-content;
+    }
+    &__privacy-text{
+        margin-top: 16px;
+        color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        align-items: center;
+        min-width: max-content;
+        gap: 4px;
+    }
+    &__privacy-link{
+        text-transform: none;
+        width: fit-content;
+        padding: 0;
+    }
+    &__back {
+    }
+}
+
