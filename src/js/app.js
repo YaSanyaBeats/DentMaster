@@ -1,5 +1,6 @@
 const isMobile = document.documentElement.clientWidth < 768;
-const isTablet = document.documentElement.clientWidth < 1140;
+const isTablet = document.documentElement.clientWidth < 1100;
+const isLaptop = document.documentElement.clientWidth < 1408;
 
 window.accordeons = {};
 
@@ -73,6 +74,15 @@ function animFeedBackOverlay()
         });
     }
 }
+
+function initLaptopPortal() {
+    $('[data-laptop-portal]').each((index, elem) => {
+        let target = $(elem).attr('data-laptop-portal');
+        let targetNode = $(target);
+        $(elem).appendTo(targetNode);
+    })
+}
+
 document.addEventListener('DOMContentLoaded', (event) => {
     if(isMobile) {
         initAccordeons();
@@ -81,6 +91,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     {
         animFeedBackOverlay();
     }
+
+    if(isLaptop) {
+        initLaptopPortal();
+    }
+
     initScrollHandler();
     initFixedMenu();
 })

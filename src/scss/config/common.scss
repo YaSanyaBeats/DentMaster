@@ -660,7 +660,14 @@ section {
         }
     }
 }
-.wrapper_space{
+
+.wrapper-space{
     padding-left: 232px;
+    padding-right: 100px;
 }
 
+@include media($mobile) {
+    .wrapper-space{
+        padding-left: 0px;
+    }
+}
