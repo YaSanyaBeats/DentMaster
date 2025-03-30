@@ -52,9 +52,34 @@ function hideFixedMenu() {
     button.removeClass('menu__button_active');
 }
 
+function animFeedBackOverlay()
+{
+    let section = document.querySelector('.feedback');
+    let image = document.querySelector('.feedback__back');
+    let skewUpdateDelay = 16;
+    let lastTime = 0;
+    if (section && image)
+    {
+        section.addEventListener('mousemove', (e) => {
+
+            const now = Date.now();
+            if (now - lastTime < skewUpdateDelay) return;
+
+            let rect = section.getBoundingClientRect();
+            let y = e.clientY - rect.top;
+            let yPercent = y / rect.height;
+            let yValue = 1 + yPercent;
+            image.style.transform = `scale(${yValue})`;
+        });
+    }
+}
 document.addEventListener('DOMContentLoaded', (event) => {
     if(isMobile) {
         initAccordeons();
+    }
+    else
+    {
+        animFeedBackOverlay();
     }
     initScrollHandler();
     initFixedMenu();
