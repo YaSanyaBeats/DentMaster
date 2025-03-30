@@ -1,23 +1,26 @@
 .header {
     transition: .3s;
     background-color: black;
-    position: fixed;
     z-index: 1000;
     width: 100%;
-    top: 0;
-    left: 0;
     padding: 20px 0;
-    &.active{
+    &.uk-active{
         background-color: white;
-        .header__block *{
-            color: #535353;
-            fill: #535353
+        .header {
+            &__block * {
+                color: #535353;
+                fill: #535353
+            }
+            &__burger-line {
+                background-color: #535353;
+            }
         }
     }
     &__container {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 20px;
     }
 
     &__block {
@@ -146,6 +149,9 @@
         }
         &__desc{
             display: none;
+        }
+        &__logo-wrapper {
+            width: 166px;
         }
     }
 }

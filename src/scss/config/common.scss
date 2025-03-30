@@ -183,7 +183,7 @@ h1, h2, h3, h4, h5, h6 {
         &::after {
             content: '';
             position: absolute;
-            bottom: -3px;
+            bottom: 0;
             left: 0;
             right: 0;
             opacity: 0;
@@ -461,5 +461,148 @@ h1, h2, h3, h4, h5, h6 {
         font-weight: 700;
         font-size: 12px;
         line-height: 18px;
+    }
+}
+
+@include media($mobile) {
+    .text {
+        &_mobile-h1 {
+            font-size: 72px;
+            line-height: 1.112em;
+        }
+        &_mobile-h2 {
+            font-size: 60px;
+            line-height: 1.2em;
+        }
+        &_mobile-h3 {
+            font-size: 48px;
+            line-height: 1.25em;
+        }
+        &_mobile-h4 {
+            font-size: 36px;
+            line-height: 1.223em;
+        }
+        &_mobile-h5 {
+            font-size: 30px;
+            line-height: 1.2667em;
+        }
+        &_mobile-h6 {
+            font-size: 24px;
+            line-height: 1.334em;
+        }
+    
+        &_mobile-body-xl {
+            font-size: 20px;
+            line-height: 1.4em;
+        }
+        &_mobile-body-lg {
+            font-size: 18px;
+            line-height: 1.444em;
+        }
+        &_mobile-body-md {
+            font-size: 16px;
+            line-height: 1.5em;
+        }
+        &_mobile-body-sm {
+            font-size: 14px;
+            line-height: 1.4285em;
+        }
+        &_mobile-body-xs {
+            font-size: 12px;
+            line-height: 1.5em;
+        }
+    
+        &_mobile-label-xl {
+            font-family: 'FiraSans', sans-serif;
+            font-size: 20px;
+            line-height: 28px;
+        }
+        &_mobile-label-lg {
+            font-family: 'FiraSans', sans-serif;
+            font-size: 18px;
+            line-height: 26px;
+        }
+        &_mobile-label-md {
+            font-family: 'FiraSans', sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        &_mobile-label-sm {
+            font-family: 'FiraSans', sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        &_mobile-label-xs {
+            font-family: 'FiraSans', sans-serif;
+            font-size: 12px;
+            line-height: 18px;
+        }
+    
+        &_mobile-link-xl {
+            font-family: 'FiraSans', sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            letter-spacing: .02em;
+        }
+        &_mobile-link-lg {
+            font-family: 'FiraSans', sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 26px;
+            letter-spacing: .02em;
+        }
+        &_mobile-link-md {
+            font-family: 'FiraSans', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: .02em;
+        }
+        &_mobile-link-sm {
+            font-family: 'FiraSans', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: .02em;
+        }
+        &_mobile-link-xs {
+            font-family: 'FiraSans', sans-serif;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 18px;
+            letter-spacing: .02em;
+        }
+    
+        &_mobile-link-secondary-xl {
+            font-family: 'FiraSans', sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+        }
+        &_mobile-link-secondary-lg {
+            font-family: 'FiraSans', sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 26px;
+        }
+        &_mobile-link-secondary-md {
+            font-family: 'FiraSans', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        &_mobile-link-secondary-sm {
+            font-family: 'FiraSans', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        &_mobile-link-secondary-xs {
+            font-family: 'FiraSans', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 18px;
+        }
     }
 }
