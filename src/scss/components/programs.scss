@@ -41,16 +41,19 @@
         flex-direction: column;
         position: relative;
         border-top: 1px solid #ededed;
-        &:nth-child(4n+2){
+        &:before{
+            content: "";
+            display: block;
+            position: absolute;
+            left: -8px;
+            height: 100%;
+            width: 1px;
+            background-color: #ededed;
+            top: 0;
+        }
+        &:nth-child(4n+1){
             &:before{
-                content: "";
-                display: block;
-                position: absolute;
-                left: -8px;
-                height: 100%;
-                width: 1px;
-                background-color: #ededed;
-                top: 0;
+                display: none;
             }
         }
         @include any-hover {
@@ -174,7 +177,18 @@
   
             grid-template-columns: repeat(3, 1fr);
         }
-
+        &__card {
+            &:nth-child(4n+1){
+                &:before{
+                    display: block;
+                }
+            }
+            &:nth-child(3n+1){
+                &:before{
+                    display: none;
+                }
+            }
+        }
     }
 }
 @include media($tablet) {
@@ -182,6 +196,23 @@
 
         &__grid {
             grid-template-columns: repeat(2, 1fr);
+        }
+        &__card {
+            &:nth-child(4n+1){
+                &:before{
+                    display: block;
+                }
+            }
+            &:nth-child(3n+1){
+                &:before{
+                    display: block;
+                }
+            }
+            &:nth-child(2n+1){
+                &:before{
+                    display: none;
+                }
+            }
         }
         &__card-icon-wrapper {
             width: 80px;
@@ -233,6 +264,11 @@
         }
         &__mobile-button{
             display: flex;
+        }
+        &__card {
+            &:before{
+                display: none;
+            }
         }
     }
 }
