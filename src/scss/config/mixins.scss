@@ -43,8 +43,6 @@
     $addSize: $max - $min;
     $maxWidth: $laptop - $minWidth;
     #{$prop}: clamp(#{$min + 'px'}, calc(#{$min + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth})), #{$max + 'px'});
-
-
 }
 
 @mixin fluid2($min1, $max1, $min2, $max2, $prop) {

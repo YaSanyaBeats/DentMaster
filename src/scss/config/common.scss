@@ -1,89 +1,465 @@
-// Заголовки, общие БЄМ блоки и проче...
-body {
-    background: linear-gradient(to bottom, #0C0707 70%, #270909 100%);
-    font-family: 'Inter', sans-serif;
-    color: white;
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
-a {
+.ui-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    gap: 20px;
+    padding: 20px 0;
+    &_dark {
+        background-color: #262626;
+        padding: 20px;
+    }
+}
+
+.button {
+    font-family: 'FiraSans', sans-serif;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    background-color: #535353;
+    border: 1px solid transparent;
+    border-radius: 4px;
     color: white;
-    transition: .2s;
-    &:hover, &:focus {
-        color: white;
-        opacity: .7;
+    text-transform: uppercase;
+    transition: .25s;
+    cursor: pointer;
+    @include any-hover {
+        background-color: #262626;
         text-decoration: none;
+        .button {
+            &__icon {
+                transform: rotate(45deg);
+            }
+        }
     }
-}
-
-.social {
-    display: flex;
-    gap: 15px;
-    &__icon {}
-}
-
-.code {
-    background: #202020;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    &__header {
-        background: #191919;
-        border-bottom: 1px solid #252525;
-        padding: 15px 20px;
-        border-radius: 20px 20px 0 0;
+    &:focus {
+        background-color: #262626;
+        .button {
+            &__icon {
+                transform: rotate(45deg);
+            }
+        }
     }
-    &__title {}
-    &__body {
-        background: #191919;
-        border: 1px solid #252525;
-        margin: 15px 20px;
-        padding: 10px 15px;
-        border-radius: 10px;
+    &:focus-visible {
+        outline: none !important;
+    }
+    &_disabled {
+        opacity: .5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+    &_extra-small {
+        padding: 8px 12px;
+        gap: 8px;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: .02em;
+        .button {
+            &__icon {
+                padding: 4px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    &_small {
+        padding: 10px 14px;
+        gap: 8px;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: .02em;
+        .button {
+            &__icon {
+                padding: 4px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    &_medium {
+        padding: 10px 16px;
+        gap: 8px;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: .02em;
+        .button {
+            &__icon {
+                padding: 4px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    &_large {
+        padding: 12px 18px;
+        gap: 8px;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: .02em;
+        .button {
+            &__icon {
+                padding: 4px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    &_extra-large {
+        padding: 12px 22px;
+        gap: 12px;
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: 0em;
+        .button {
+            &__icon {
+                padding: 6px;
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+    &_outline {
+        background: transparent;
+        border: 1px solid #535353;
+        color: #535353;
+        @include any-hover {
+            background-color: #F7F7F7;
+            color: #262626;
+        }
+        &:focus {
+            background-color: white;
+            color: #262626;
+        }
+    }
+    &_secondary {
+        background-color: #EDEDED;
+        color: #535353;
+        @include any-hover {
+            background-color: #DCDCDC;
+            color: #262626;
+        }
+        &:focus {
+            background-color: #EDEDED;
+            color: #262626;
+        }
+    }
+    &_transparent {
+        background-color: transparent;
+        color: #535353;
+        @include any-hover {
+            background-color: #EDEDED;
+            color: #262626;
+        }
+        &:focus {
+            background-color: #EDEDED;
+            color: #262626;
+        }
+    }
+    &_link {
+        padding: 0;
+        background-color: transparent;
+        color: #535353;
+        @include any-hover {
+            background-color: transparent;
+            color: #262626;
+        }
+        &:focus {
+            background-color: transparent;
+            color: #262626;
+        }
+    }
+    &_underline {
         position: relative;
-        cursor: pointer;
-        &:hover {
-            .code {
-                &__copy {
-                    opacity: .6;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            background: currentColor;
+            width: 100%;
+            height: 1px;
+            transition: .3s;
+        }
+        @include any-hover {
+            &::after {
+                opacity: 1;
+            }
+        }
+        &:focus {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+    &_icon {
+        &.button {
+            &_extra-small {
+                width: 36px;
+                height: 36px;
+                padding: 7px;
+            }
+            &_small {
+                width: 40px;
+                height: 40px;
+                padding: 9px;
+            }
+            &_medium {
+                width: 44px;
+                height: 44px;
+                padding: 11px;
+            }
+            &_large {
+                width: 48px;
+                height: 48px;
+                padding: 11px;
+                & .button {
+                    &__icon {
+                        width: 24px;
+                        height: 24px;
+                        padding: 6px;
+                    }
+                }
+            }
+            &_extra-large {
+                width: 60px;
+                height: 60px;
+                padding: 17px;
+            }
+        }
+    }
+
+    &_dark {
+        background-color: #FFFFFF33;
+        border-color: #FFFFFF4D;
+        @include any-hover {
+            background-color: #FFFFFF4D;
+            border-color: #FFFFFF66;
+        }
+
+        &.button {
+            &_outline {
+                background-color: transparent;
+                border-color: white;
+                color: white;
+                @include any-hover {
+                    background-color: #FFFFFF1A;
+                    border-color: #D2D2D2;
+                    color: white;
+                }
+                &:focus {
+                    background-color: #FFFFFF1A;
+                    border-color: #D2D2D2;
+                    color: white;
+                }
+            }
+
+            &_secondary {
+                background-color: #FFFFFF33;
+                border-color: transparent;
+                color: white;
+                @include any-hover {
+                    background-color: #FFFFFF4D;
+                    border-color: transparent;
+                    color: white;
+                }
+                &:focus {
+                    background-color: #FFFFFF4D;
+                    border-color: transparent;
+                    color: white;
+                }
+            }
+
+            &_transparent {
+                background-color: transparent;
+                border-color: transparent;
+                color: #FFFFFFCC;
+                @include any-hover {
+                    background-color: #FFFFFF1A;
+                    border-color: transparent;
+                    color: white;
+                }
+                &:focus {
+                    background-color: #FFFFFF1A;
+                    border-color: transparent;
+                    color: white;
+                }
+            }
+
+            &_link {
+                background-color: transparent;
+                border-color: transparent;
+                color: #FFFFFFCC;
+                @include any-hover {
+                    background-color: transparent;
+                    border-color: transparent;
+                    color: white;
+                }
+                &:focus {
+                    background-color: transparent;
+                    border-color: transparent;
+                    color: white;
                 }
             }
         }
     }
-    &__text {
-        margin: 0;
-        font-size: 16px;
-        font-family: 'Inika';
-    }
-    &__copy {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        opacity: 0;
+
+    &__icon {
         transition: .3s;
-        &:hover {
-            opacity: 1 !important;
-        }
+    }
+    &__text {
+        padding-top: 2px;
     }
 }
 
-main {
-    display: flex;
-    align-items: center;
-}
+.text {
+    &_h1 {
+        font-size: 72px;
+        line-height: 1.112em;
+    }
+    &_h2 {
+        font-size: 60px;
+        line-height: 1.2em;
+    }
+    &_h3 {
+        font-size: 48px;
+        line-height: 1.25em;
+    }
+    &_h4 {
+        font-size: 36px;
+        line-height: 1.223em;
+    }
+    &_h5 {
+        font-size: 30px;
+        line-height: 1.2667em;
+    }
+    &_h6 {
+        font-size: 24px;
+        line-height: 1.334em;
+    }
 
-.uk-notification {
-    width: 300px;
-    margin-left: -150px;
-}
+    &_body-xl {
+        font-size: 20px;
+        line-height: 1.4em;
+    }
+    &_body-lg {
+        font-size: 18px;
+        line-height: 1.444em;
+    }
+    &_body-md {
+        font-size: 16px;
+        line-height: 1.5em;
+    }
+    &_body-sm {
+        font-size: 14px;
+        line-height: 1.4285em;
+    }
+    &_body-xs {
+        font-size: 12px;
+        line-height: 1.5em;
+    }
 
-.uk-notification-message {
-    background-color: #191919;
-    color: white;
-    border-radius: 20px;
-    font-size: 16px;
-    text-align: center;
+    &_label-xl {
+        font-family: 'FiraSans', sans-serif;
+        font-size: 20px;
+        line-height: 28px;
+    }
+    &_label-lg {
+        font-family: 'FiraSans', sans-serif;
+        font-size: 18px;
+        line-height: 26px;
+    }
+    &_label-md {
+        font-family: 'FiraSans', sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    &_label-sm {
+        font-family: 'FiraSans', sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    &_label-xs {
+        font-family: 'FiraSans', sans-serif;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    &_link-xl {
+        font-family: 'FiraSans', sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: .02em;
+    }
+    &_link-lg {
+        font-family: 'FiraSans', sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: .02em;
+    }
+    &_link-md {
+        font-family: 'FiraSans', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: .02em;
+    }
+    &_link-sm {
+        font-family: 'FiraSans', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: .02em;
+    }
+    &_link-xs {
+        font-family: 'FiraSans', sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: .02em;
+    }
+
+    &_link-secondary-xl {
+        font-family: 'FiraSans', sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    &_link-secondary-lg {
+        font-family: 'FiraSans', sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 26px;
+    }
+    &_link-secondary-md {
+        font-family: 'FiraSans', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    &_link-secondary-sm {
+        font-family: 'FiraSans', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    &_link-secondary-xs {
+        font-family: 'FiraSans', sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 18px;
+    }
 }
