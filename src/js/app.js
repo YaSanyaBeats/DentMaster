@@ -9,8 +9,15 @@ function initAccordeons() {
        content: '> .footer__menu-items',
        toggle: '> .footer__menu-title'
     });
+    
 }
-
+function initFaqAccordeon()
+{
+    window.accordeons.footer = UIkit.accordion($('.faq__accordion'), {
+        content: '> .faq__accordion-content',
+        toggle: '> .faq__accordion-title'
+     });
+}
 function initScrollHandler() {
     updateScrollHandler();
     $(window).on('scroll', updateScrollHandler);
@@ -133,4 +140,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     initScrollHandler();
     initFixedMenu();
+    initFaqAccordeon();
 })
