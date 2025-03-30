@@ -1,6 +1,6 @@
 const isMobile = document.documentElement.clientWidth < 768;
 const isTablet = document.documentElement.clientWidth < 1140;
-
+const scrollParam = 50;
 function isWebp() {
     // Проверка поддержки webp
     const testWebp = (callback) => {
@@ -41,6 +41,30 @@ function initCopyCode() {
     })
 }
 
+function checkScroll() {
+    if (window.scrollY > scrollParam) {
+        return true;
+    }
+    return false;
+}
+function adaptiveScrollHeader() {
+    let header = document.querySelector("header");
+    function check()
+    {
+        if (checkScroll()) {
+            header.classList.add("active");
+        }
+        if (!checkScroll()) {
+            header.classList.remove("active");
+        }
+    }
+    document.addEventListener('scroll', (event) => {
+        check();
+    });
+    check();
+}
+
 document.addEventListener('DOMContentLoaded', (event) => {
     initCopyCode();
+    adaptiveScrollHeader();
 })
