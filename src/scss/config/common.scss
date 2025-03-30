@@ -620,3 +620,33 @@ h1, h2, h3, h4, h5, h6 {
         color: currentColor;
     }
 }
+.title-row {
+    display: flex;
+    flex-direction: column;
+    &__line {
+        width: 100%;
+        height: 1px;
+        background-color: #ededed;
+    }
+    &__title {
+        margin-top: 12px;
+        color: #6d6d6d;
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+    &.white{
+        .title-row__line{
+            background-color: white;
+            opacity: 0.2;
+        }
+        .title-row__title{
+            color: #ebedec;
+        }
+    }
+}
+.form {
+    &__privacy-text {
+    }
+    &__privacy-link {
+    }
+}
