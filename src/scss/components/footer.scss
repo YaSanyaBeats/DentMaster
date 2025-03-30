@@ -36,11 +36,13 @@
         padding-left: 32px;
         border-left: 1px solid #c4c4c4;
         width: 344px;
+
     }
 
     &__menu-title {
         color: white;
         opacity: 0.6;
+        text-transform: uppercase;
     }
 
     &__menu-items {
@@ -54,14 +56,265 @@
         opacity: 0.8;
         color: white;
         width: fit-content;
+        span{
+            padding: 0;
+        }
         .button__text{
             text-transform: none;
             color: white;
         }
     }
     &__block-menu{
+        margin-top: 40px;
+        .footer__menu{
+            &:nth-child(1){
+                border-left: none;
+                padding-left: 0;
+            }
+            padding-top: 16px;
+        }
         display: flex;
         list-style: none;
         padding-left: 0;
+        border-top: 1px solid #c4c4c4;
+    }
+
+    &__block-social {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #c4c4c4;
+        margin-top: 60px;
+    }
+
+    &__menu-social {
+        width: 50%;
+        padding-top: 16px;
+    }
+
+    &__menu-social-buttons {
+        display: flex;
+        gap: 12px;
+        margin-top: 16px;
+    }
+
+    &__menu-button {
+        width: fit-content;
+    }
+
+    &__license {
+        width: 50%;
+        border-left: 1px solid #c4c4c4;
+        padding-left: 32px;
+        padding-top: 16px;
+    }
+
+    &__license-text {
+        color: white;
+        opacity: 0.6;
+        max-width: 560px;
+        width: 100%;
+        display: flex;
+    }
+
+    &__menu-documents {
+        margin-top: 10px;
+        display: flex;
+        gap: 16px;
+    }
+
+
+    &__block-politic {
+        padding-top: 16px;
+        border-top: 1px solid #c4c4c4;
+        margin-top: 60px;
+        display: flex;
+    }
+    &__block-politic-copirate{
+        width: 50%;
+    }
+    &__block-politic-links {
+        width: 50%;
+        padding-left: 32px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    &__block-politic-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        .footer__menu-title{
+            min-width: max-content;
+        }
+        .button__text{
+            min-width: max-content; 
+        }
+    }
+    &__block-logos{
+        width: 50%;
+        margin-left: auto;
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+        padding-left: 32px;
+    }
+    &__block-logo-wrapper{
+        opacity: 0.6;
+        transition: .3s;
+        &:hover{
+            opacity: 1;
+        }
+    }
+}
+
+@include media($tablet) {
+    .footer {
+        padding: 48px 0 64px 0;
+
+    
+        &__block-up {
+            flex-direction: column;
+        }
+    
+        &__logo-wrapper {
+            width: 100%;
+        }
+    
+        &__logo-img {
+        }
+    
+        &__block-up-contacts {
+            margin-top: 40px;
+            width: 100%;
+            padding-right: 16px;
+        }
+    
+        &__menu {
+            padding-left: 32px;
+            border-left: 1px solid #c4c4c4;
+            width: 50%;
+            &:nth-child(1) {
+                border-left: none;
+                padding-left: 0;
+            }
+        }
+        &__block-social{
+            flex-direction: column;
+        }
+        &__license{
+            padding-left: 0;
+            border: none;
+            width: 100%;
+        }
+        &__block-politic{
+            flex-direction: column;
+        }
+        &__block-politic-links{
+            padding: 0;
+            width: 100%;
+            margin-top: 32px;
+        }
+        &__block-logos{
+            width: 100%;
+            padding: 0;
+        }
+    }
+}
+
+
+@include media($mobile) {
+    .footer {
+
+        &__container {
+
+        }
+
+        &__block-up {
+
+        }
+
+        &__logo-wrapper {
+
+        }
+
+        &__logo-img {
+        }
+
+        &__block-up-contacts {
+
+        }
+
+        &__menu {
+
+
+        }
+
+        &__menu-title {
+
+        }
+
+        &__menu-items {
+
+        }
+
+        &__menu-item {
+ 
+        }
+        &__block-menu{
+
+        }
+
+        &__block-social {
+
+        }
+
+        &__menu-social {
+
+        }
+
+        &__menu-social-buttons {
+
+        }
+
+        &__menu-button {
+ 
+        }
+
+        &__license {
+
+        }
+
+        &__license-text {
+
+        }
+
+        &__menu-documents {
+
+        }
+
+
+        &__block-politic {
+
+        }
+        &__block-politic-copirate{
+
+        }
+        &__block-politic-links {
+
+        }
+
+        &__block-politic-link {
+    
+        }
+        &__block-logos{
+
+        }
+        &__block-logo-wrapper{
+
+        }
     }
 }
