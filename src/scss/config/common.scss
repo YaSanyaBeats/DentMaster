@@ -238,6 +238,10 @@ h1, h2, h3, h4, h5, h6 {
             background-color: #FFFFFF4D;
             border-color: #FFFFFF66;
         }
+        &:focus {
+            background-color: #FFFFFF4D;
+            border-color: #FFFFFF66;
+        }
 
         &.button {
             &_outline {
@@ -311,6 +315,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     &__text {
         padding-top: 2px;
+        flex-grow: 1;
     }
     &_anim {
         @include any-hover {
