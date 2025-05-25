@@ -1,0 +1,72 @@
+.sky-blocks {
+    user-select: none;
+    &__container {
+        position: relative;
+    }
+    &__blocks-container {
+        position: relative;
+    }
+    &__elems {
+        position: relative;
+        height: 90vh;
+        min-height: 750px;
+        max-height: 850px;
+        overflow: hidden;
+        user-select: none;
+        margin-top: -100px;
+        max-width: 1920px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &__elem {
+        position: absolute;
+        top: 0;
+        padding: 14px 18px;
+        border-radius: 100px;
+        border: 1px solid #5353531A;
+        color: #535353;
+        background-color: #0000001A;
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity .3s;
+        cursor: grab;
+        font-size: 18px;
+        font-weight: 500;
+        backdrop-filter: blur(10px);
+        background: #FFFFFF1A;
+        transition: .3s border-color;
+        @include any-hover {
+            border-color: #26EE9F;
+        }
+    }
+    &__bg-title {
+        pointer-events: none;
+        font-weight: 700;
+        font-size: 180px;
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        user-select: none;
+    }
+}
+
+@include media($tablet) {
+    .sky-blocks {
+        &__elems {
+            min-height: 90vh;
+            height: 90vh;
+        }
+        &__elem {
+            font-size: 10px;
+            padding: 8px;
+            backdrop-filter: blur(5px);
+        }
+        &__bg-title {
+            font-size: 90px;
+            left: 16px;
+            top: 32px;
+            transform: none;
+        }
+    }
+}

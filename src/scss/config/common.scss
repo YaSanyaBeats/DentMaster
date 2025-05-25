@@ -7,6 +7,15 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
 }
 
+a {
+    color: inherit;
+    transition: .3s;
+    &:hover {
+        text-decoration: none;
+        opacity: .7;
+    }
+}
+
 .ui-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -168,6 +177,11 @@ h1, h2, h3, h4, h5, h6 {
             background-color: transparent;
             color: #262626;
         }
+        &.button{
+            &_extra-large {
+                font-size: 20px;
+            }
+        }
     }
     &_underline {
         position: relative;
@@ -311,6 +325,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &__icon {
+        flex-shrink: 0;
         transition: transform .3s;
     }
     &__text {
@@ -640,9 +655,10 @@ section {
     display: flex;
     flex-direction: column;
     &__line {
-        width: 100%;
+        width: calc(100% + 16px);
         height: 1px;
         background-color: #ededed;
+        margin-right: -16px;
     }
     &__title {
         margin-top: 12px;
@@ -650,7 +666,7 @@ section {
         text-transform: uppercase;
         margin-bottom: 0;
     }
-    &.white{
+    &_white{
         .title-row__line{
             background-color: white;
             opacity: 0.2;
@@ -663,7 +679,106 @@ section {
 
 .wrapper-space{
     padding-left: 232px;
-    padding-right: 100px;
+}
+
+.tabs {
+    &__elem {
+        padding: 10px 0;
+        text-transform: uppercase;
+        width: 332px;
+        color: #ADADAD;
+        cursor: pointer;
+        transition: .3s;
+        position: relative;
+        @include any-hover {
+            color: #535353;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 0;
+            height: 1px;
+            background-color: #535353;
+            transition: .3s;
+        }
+        &_active {
+            position: relative;
+            color: #535353;
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.gradient-overlay {
+    &__wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        filter: blur(50px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: backgroundGradient 10s infinite ease-out;
+    }
+}
+
+.show-mobile {
+    display: none;
+}
+
+.select {
+    &__dropdown {
+        padding: 4px 0;
+    }
+    &__option {
+        padding: 9px 32px;
+        margin-bottom: 4px;
+        color: #6D6D6D;
+        transition: .3s;
+        cursor: pointer;
+        font-weight: 500;
+        position: relative;
+        @include any-hover {
+            color: #535353;
+            background-color: #EDEDED;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(30deg);
+            background-image: url('@img/icons/select-down.svg');
+            background-repeat: no-repeat;
+            background-size: 14px 14px;
+            background-position: 50% 50%;
+            width: 20px;
+            height: 20px;
+            opacity: 0;
+            transition: .3s;
+        }
+        &_active {
+            color: #535353;
+            &::before {
+                transform: translate(0, -50%) rotate(30deg);
+                opacity: 1;
+            }
+        }
+    }
 }
 
 @include media($laptop) {
@@ -679,9 +794,19 @@ section {
             margin-top: 0;
             margin-bottom: 12px;
         }
+        &__line {
+            margin-right: 0;
+            width: 100%;
+        }
     }
     .wrapper-space{
         padding-left: 0;
         padding-right: 0px;
+    }
+    .hidden-mobile {
+        display: none;
+    }
+    .show-mobile {
+        display: flex;
     }
 }

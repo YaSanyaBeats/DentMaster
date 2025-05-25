@@ -1,5 +1,5 @@
-.equipment {
-    padding-top: 64px;
+.tab-slider {
+    padding: 64px 0;
     position: relative;
     &__container {
     }
@@ -48,12 +48,11 @@
         margin-top: 20px;
     }
     &__button {
-        margin-top: 32px;
+
     }
     &__buttons {
         display: flex;
         margin-top: 16px;
-        
     }
     &__buttons-sep {
         width: 1px;
@@ -64,34 +63,7 @@
         flex-direction: column;
     }
     &__pagination-elem {
-        padding: 10px 0;
-        text-transform: uppercase;
-        width: 332px;
-        color: #ADADAD;
-        cursor: pointer;
-        transition: .3s;
-        position: relative;
-        @include any-hover {
-            color: #535353;
-        }
-        &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            width: 0;
-            height: 1px;
-            background-color: #535353;
-            transition: .3s;
-        }
-        &_active {
-            position: relative;
-            color: #535353;
-            &::after {
-                width: 100%;
-            }
-        }
+        
     }
     &__right {
         flex: 0 0 448px;
@@ -100,5 +72,41 @@
         width: 100%;
         height: 664px;
         object-fit: cover;
+    }
+}
+
+@include media($laptop) {
+    .tab-slider {
+        &__left {
+            flex: 1 1 300px;
+            width: 300px;
+        }
+        &__right {
+            flex: 0 0 400px;
+        }
+        &__content {
+            gap: 24px;
+        }
+    }
+}
+
+@include media($tablet) {
+    .tab-slider {
+        &__right {
+            display: none;
+        }
+    }
+}
+
+@include media($mobile) {
+    .tab-slider {
+        
+        &__left {
+            flex: 1 1 100%;
+            width: 100%;
+        }
+        &__content {
+            margin-top: 32px;
+        }
     }
 }

@@ -1,0 +1,123 @@
+.front-hero {
+    background-color: #9C9C9C;
+    padding-top: 80px;
+    padding-bottom: 92px;
+    color: white;
+    position: relative;
+    &__container {}
+    &__grid {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1014px auto;
+        grid-template-rows: 1fr auto;
+        min-height: calc(100vh - 172px);
+    }
+    &__top-left {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        border-top: 1px solid #FFFFFF66;
+        border-bottom: 1px solid #FFFFFF66;
+        border-right: 1px solid #FFFFFF66;
+    }
+    &__text {
+        max-width: 640px;
+        margin-bottom: 16px;
+    }
+    &__subtext {
+        max-width: 640px;
+        text-transform: uppercase;
+        color: #FFFFFF99;
+    }
+    &__top-right {
+        padding-top: 40px;
+        padding-left: 24px;
+        border-top: 1px solid #FFFFFF66;
+        border-bottom: 1px solid #FFFFFF66;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    &__bottom-left {
+        border-right: 1px solid #FFFFFF66;
+        padding-top: 60px;
+        padding-right: 32px;
+        padding-bottom: 24px;
+    }
+    &__bottom-right {
+        padding-top: 60px;
+        padding-left: 24px;
+        padding-bottom: 24px;
+    }
+    &__menu {}
+    &__menu-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 16px;
+        padding: 0;
+        margin: 0;
+    }
+    &__logo {
+        max-width: 740px;
+        width: 100%;
+    }
+    &__menu-elem {}
+    &__menu-link {}
+}
+
+@include media($laptop) {
+    .front-hero {
+        &__grid {
+            grid-template-columns: 1fr auto;
+        }
+        &__logo {
+           
+        }
+    }
+}
+
+@include media($tablet) {
+    .front-hero {
+        
+    }
+}
+
+@include media($mobile) {
+    .front-hero {
+        padding-top: 72px;
+        padding-bottom: 64px;
+        &__grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr auto;
+            min-height: calc(100svh - 144px);
+        }
+        &__top-left {
+            border-right: none;
+            border-bottom: none;
+            padding-top: 32px;
+        }
+        &__top-right {
+            display: none;
+        }
+        &__bottom-left {
+            border-right: none;
+            border-bottom: 1px solid #FFFFFF66;
+            padding-bottom: 32px;
+            padding-top: 0;
+            padding-right: 0;
+            align-self: end;
+        }
+        &__bottom-right {
+            padding-left: 0;
+            padding-top: 32px;
+            padding-bottom: 0;
+        }
+        &__menu-elem .button__text {
+            font-size: 16px;
+            line-height: 24px;
+        }
+       
+    }
+}

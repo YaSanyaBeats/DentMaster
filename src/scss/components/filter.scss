@@ -1,0 +1,58 @@
+.filter {
+    padding: 64px 0;
+    &__container {}
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 64px;
+    }
+    &__title {
+        font-weight: 600;
+    }
+    &__subtitle {
+        max-width: 680px;
+    }
+    &__nav {
+        margin-top: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+    }
+    &__tabs {}
+    &__tab-elem {}
+    &__buttons {
+        display: flex;
+        gap: 16px;
+    }
+    &__select-filter {
+        flex: 0 0 332px;
+        width: 332px;
+        button {
+            width: 100%;
+        }
+       
+    }
+    &__select-sort {
+        flex: 0 0 332px;
+        width: 332px;
+        button {
+            width: 100%;
+        }
+    }
+    &__grid {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: 340px 340px 340px 332px;
+        gap: 32px 8px;
+        & > :nth-child(4n) {
+            border-right: none;
+            padding-right: 0;
+        }
+        & > :nth-child(4n - 3) {
+            border-left: none;
+        }
+        & > :last-child {
+            border-right: none;
+        }
+    }
+}

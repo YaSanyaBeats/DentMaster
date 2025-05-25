@@ -1,0 +1,70 @@
+.cloud {
+    padding: 64px 0;
+    background-color: #F7F7F7;
+    &__container {
+    }
+    &__wrapper-space {
+        display: flex;
+    }
+    &__left {
+        flex: 560px 0 0;
+        padding: 48px 0;
+    }
+    &__title {
+        margin-bottom: 0;
+        font-weight: 600;
+        color: #535353;
+    }
+    &__text {
+        margin-top: 20px;
+        color: #535353;
+    }
+    &__tabs {
+        margin-top: 148px;
+    }
+    &__right {
+        position: relative;
+        width: 100%;
+    }
+    &__canvas {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        //border: 1px solid rgba(0, 0, 0, 0.404);
+        width: 1200px;
+        height: 670px;
+    }
+}
+
+@include media($laptop) {
+    .cloud {
+        &__canvas {
+            width: 800px;
+            height: 480px;
+        }
+    }
+}
+
+@include media($tablet) {
+    .cloud {
+        &__left {
+            flex: 1 1 auto;
+        }
+        &__right {
+            display: none;
+        }
+    }
+}
+
+@include media($mobile) {
+    .cloud {
+        padding: 48px 0;
+        &__left {
+            padding: 0;
+        }
+        &__tabs {
+            margin-top: 64px;
+        }
+    }
+}

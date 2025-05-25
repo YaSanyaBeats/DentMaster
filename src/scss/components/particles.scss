@@ -1,0 +1,116 @@
+.particles {
+    padding: 64px 0;
+    color: #535353;
+    &__container {}
+    &__title {
+        font-weight: 600;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 32px;
+        color: #535353;
+        max-width: 900px;
+    }
+    &__content {
+        display: flex;
+        gap: 32px;
+        margin-top: 64px;
+    }
+    &__left {
+        flex: 564px 0 0;
+        position: relative;
+    }
+    &__canvas {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        right: 0;
+        bottom: 0;
+    }
+    &__right {
+        flex-grow: 1;
+    }
+    &__text {
+        max-width: 560px;
+    }
+    &__links {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 48px 0 0 0;
+        list-style: none;
+        gap: 20px;
+    }
+    &__elem {
+        display: flex;
+        gap: 16px;
+        border-top: 1px solid #EDEDED;
+        padding: 16px 0;
+    }
+    &__elem-number {
+        flex: 100px 0 0;
+    }
+    &__elem-text {
+        flex: 448px 0 0;
+        font-weight: 600;
+    }
+}
+
+@include media($tablet-large) {
+    .particles {
+        &__content {
+            justify-content: space-between;
+        }
+        &__left {
+            flex: 0 0 500px;
+        }
+        &__right {
+            flex: 0 0 auto;
+        }
+    }
+}
+
+@include media($tablet) {
+    .particles {
+        &__title {
+            margin-top: 24px;
+        }
+        &__content {
+            position: relative;
+            margin-top: 0;
+        }
+        &__left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 350px;
+            height: 350px;
+            transform: translateX(-50%);
+        }
+        &__right {
+            margin-top: 48px;
+            padding-left: 240px;
+            width: 100%;
+        }
+        &__elem-text {
+            flex: 1 1 auto;
+        }
+    }
+}
+
+@include media($mobile) {
+    .particles {
+        &__text {
+            padding-left: 80px;
+        }
+        &__right {
+            margin-top: 60px;
+            padding-left: 0;
+        }
+        &__elem-icon {
+            flex-shrink: 0;
+        }
+        &__elem-number {
+            flex: 0 0 77px;
+        }
+    }
+}
